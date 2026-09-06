@@ -1,0 +1,1209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Happy Birthday Maria ✨</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#07070d;
+    color:white;
+    font-family:Arial, sans-serif;
+    overflow-x:hidden;
+}
+
+/* BACKGROUND */
+
+body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+    pointer-events:none;
+    background:
+        radial-gradient(
+            circle at 20% 20%,
+            rgba(150,80,255,.15),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 80% 70%,
+            rgba(255,80,150,.12),
+            transparent 30%
+        );
+    z-index:-2;
+}
+
+.stars{
+    position:fixed;
+    inset:0;
+    z-index:-1;
+    overflow:hidden;
+}
+
+.star{
+    position:absolute;
+    width:2px;
+    height:2px;
+    background:white;
+    border-radius:50%;
+    animation:twinkle 3s infinite ease-in-out;
+}
+
+@keyframes twinkle{
+    0%,100%{
+        opacity:.2;
+        transform:scale(1);
+    }
+
+    50%{
+        opacity:1;
+        transform:scale(1.8);
+    }
+}
+
+
+/* HERO */
+
+.hero{
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    padding:30px;
+}
+
+.hero-content{
+    max-width:850px;
+}
+
+.small{
+    color:#b9a7ff;
+    letter-spacing:5px;
+    font-size:12px;
+    text-transform:uppercase;
+    margin-bottom:25px;
+}
+
+.hero h1{
+    font-size:clamp(55px,11vw,120px);
+    line-height:.95;
+    font-weight:900;
+    letter-spacing:-5px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #ffffff,
+            #d8c8ff,
+            #ffb7dc,
+            #ffffff
+        );
+
+    -webkit-background-clip:text;
+    color:transparent;
+
+    background-size:300%;
+
+    animation:shine 6s linear infinite;
+}
+
+@keyframes shine{
+    0%{
+        background-position:0%;
+    }
+
+    100%{
+        background-position:300%;
+    }
+}
+
+.hero p{
+    margin:30px auto;
+    color:#aaa;
+    font-size:17px;
+    line-height:1.8;
+    max-width:620px;
+}
+
+.enter{
+    padding:16px 35px;
+
+    border:1px solid rgba(255,255,255,.2);
+
+    border-radius:50px;
+
+    background:rgba(255,255,255,.06);
+
+    color:white;
+
+    cursor:pointer;
+
+    font-size:15px;
+
+    transition:.3s;
+
+    backdrop-filter:blur(10px);
+}
+
+.enter:hover{
+    transform:translateY(-4px);
+
+    background:rgba(255,255,255,.12);
+
+    box-shadow:
+        0 10px 40px
+        rgba(170,100,255,.2);
+}
+
+
+/* SECTIONS */
+
+section{
+    min-height:100vh;
+
+    padding:100px 25px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+}
+
+.container{
+    width:min(1050px,100%);
+}
+
+.section-title{
+    text-align:center;
+    margin-bottom:60px;
+}
+
+.section-title span{
+    color:#a995ff;
+
+    font-size:12px;
+
+    letter-spacing:4px;
+}
+
+.section-title h2{
+    font-size:
+        clamp(35px,6vw,65px);
+
+    margin-top:12px;
+}
+
+
+/* LETTER */
+
+.letter-area{
+    display:flex;
+    justify-content:center;
+}
+
+.envelope{
+    width:min(650px,95%);
+
+    min-height:350px;
+
+    padding:45px;
+
+    border-radius:25px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,.1),
+            rgba(255,255,255,.025)
+        );
+
+    border:
+        1px solid
+        rgba(255,255,255,.15);
+
+    box-shadow:
+        0 30px 100px
+        rgba(0,0,0,.4);
+
+    backdrop-filter:blur(20px);
+
+    text-align:center;
+}
+
+.envelope-icon{
+    font-size:60px;
+
+    margin-bottom:25px;
+}
+
+.envelope h3{
+    font-size:30px;
+
+    margin-bottom:20px;
+}
+
+.message{
+    color:#bbb;
+
+    line-height:1.9;
+
+    font-size:16px;
+}
+
+
+/* MEMORY CARDS */
+
+.cards{
+    display:grid;
+
+    grid-template-columns:
+        repeat(3,1fr);
+
+    gap:20px;
+}
+
+.card{
+    min-height:280px;
+
+    padding:30px;
+
+    border-radius:25px;
+
+    border:
+        1px solid
+        rgba(255,255,255,.12);
+
+    background:
+        rgba(255,255,255,.045);
+
+    transition:.4s;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:flex-end;
+
+    overflow:hidden;
+
+    position:relative;
+}
+
+.card::before{
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+        linear-gradient(
+            transparent 20%,
+            rgba(0,0,0,.85)
+        );
+}
+
+.card-content{
+    position:relative;
+
+    z-index:2;
+}
+
+.card:hover{
+    transform:translateY(-10px);
+
+    border-color:
+        rgba(210,180,255,.4);
+
+    box-shadow:
+        0 25px 60px
+        rgba(120,80,255,.15);
+}
+
+.card-number{
+    color:#a995ff;
+
+    font-size:12px;
+
+    letter-spacing:3px;
+
+    margin-bottom:10px;
+}
+
+.card h3{
+    font-size:25px;
+
+    margin-bottom:10px;
+}
+
+.card p{
+    color:#aaa;
+
+    line-height:1.6;
+}
+
+.card:nth-child(1){
+    background:
+        linear-gradient(
+            transparent,
+            rgba(0,0,0,.9)
+        ),
+        linear-gradient(
+            135deg,
+            #34205e,
+            #111
+        );
+}
+
+.card:nth-child(2){
+    background:
+        linear-gradient(
+            transparent,
+            rgba(0,0,0,.9)
+        ),
+        linear-gradient(
+            135deg,
+            #612746,
+            #111
+        );
+}
+
+.card:nth-child(3){
+    background:
+        linear-gradient(
+            transparent,
+            rgba(0,0,0,.9)
+        ),
+        linear-gradient(
+            135deg,
+            #174b55,
+            #111
+        );
+}
+
+
+/* REASONS */
+
+.reasons{
+    display:grid;
+
+    grid-template-columns:
+        repeat(2,1fr);
+
+    gap:15px;
+
+    max-width:850px;
+
+    margin:auto;
+}
+
+.reason{
+    padding:25px;
+
+    border-radius:18px;
+
+    background:
+        rgba(255,255,255,.045);
+
+    border:
+        1px solid
+        rgba(255,255,255,.1);
+
+    color:#ccc;
+
+    transition:.3s;
+
+    line-height:1.6;
+}
+
+.reason:hover{
+    transform:scale(1.02);
+
+    background:
+        rgba(255,255,255,.08);
+}
+
+.reason b{
+    display:block;
+
+    color:white;
+
+    margin-bottom:7px;
+}
+
+
+/* FINAL */
+
+.final{
+    text-align:center;
+
+    position:relative;
+}
+
+.final h2{
+    font-size:
+        clamp(45px,8vw,90px);
+
+    margin-bottom:25px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #fff,
+            #e1caff,
+            #ffb9db
+        );
+
+    -webkit-background-clip:text;
+
+    color:transparent;
+}
+
+.final p{
+    max-width:650px;
+
+    margin:auto;
+
+    color:#aaa;
+
+    line-height:1.9;
+}
+
+.surprise{
+    margin-top:35px;
+
+    padding:17px 35px;
+
+    border:0;
+
+    border-radius:50px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #8e62ff,
+            #ff72b7
+        );
+
+    color:white;
+
+    font-weight:bold;
+
+    font-size:16px;
+
+    cursor:pointer;
+
+    box-shadow:
+        0 15px 40px
+        rgba(180,90,255,.25);
+
+    transition:.3s;
+}
+
+.surprise:hover{
+    transform:
+        translateY(-4px)
+        scale(1.03);
+}
+
+.hidden-message{
+    display:none;
+
+    margin:35px auto 0;
+
+    max-width:650px;
+
+    padding:30px;
+
+    border-radius:25px;
+
+    background:
+        rgba(255,255,255,.06);
+
+    border:
+        1px solid
+        rgba(255,255,255,.15);
+
+    animation:
+        appear .8s ease;
+}
+
+@keyframes appear{
+
+    from{
+        opacity:0;
+
+        transform:
+            translateY(20px);
+    }
+
+    to{
+        opacity:1;
+
+        transform:
+            translateY(0);
+    }
+}
+
+.hidden-message h3{
+    font-size:30px;
+
+    margin-bottom:15px;
+}
+
+.hidden-message p{
+    color:#ccc;
+}
+
+
+/* FLOATING HEARTS */
+
+.heart{
+    position:fixed;
+
+    bottom:-30px;
+
+    pointer-events:none;
+
+    animation:
+        floatUp 5s
+        linear forwards;
+
+    z-index:50;
+}
+
+@keyframes floatUp{
+
+    0%{
+        opacity:0;
+
+        transform:
+            translateY(0)
+            scale(.5)
+            rotate(0);
+    }
+
+    20%{
+        opacity:1;
+    }
+
+    100%{
+        opacity:0;
+
+        transform:
+            translateY(-110vh)
+            scale(1.4)
+            rotate(25deg);
+    }
+}
+
+
+/* FOOTER */
+
+footer{
+    padding:40px 20px;
+
+    text-align:center;
+
+    color:#666;
+
+    font-size:13px;
+}
+
+
+/* MOBILE */
+
+@media(max-width:750px){
+
+    .cards{
+        grid-template-columns:1fr;
+    }
+
+    .reasons{
+        grid-template-columns:1fr;
+    }
+
+    .envelope{
+        padding:30px 22px;
+    }
+
+    section{
+        padding:80px 18px;
+    }
+
+    .hero h1{
+        letter-spacing:-2px;
+    }
+
+}
+</style>
+</head>
+
+
+<body>
+
+
+<!-- STARS -->
+
+<div class="stars" id="stars"></div>
+
+
+<!-- =========================
+     HERO
+========================= -->
+
+<section class="hero">
+
+    <div class="hero-content">
+
+        <div class="small">
+            A Little Surprise For
+        </div>
+
+        <h1>
+            Maria
+        </h1>
+
+        <p>
+            Some birthdays deserve more than just
+            a simple "Happy Birthday."
+            So I made something special for this one.
+        </p>
+
+        <button
+            class="enter"
+            onclick="scrollToLetter()">
+
+            Open Your Surprise ✨
+
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     LETTER
+========================= -->
+
+<section id="letter">
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <span>
+                A MESSAGE FOR YOU
+            </span>
+
+            <h2>
+                Dear Maria
+            </h2>
+
+        </div>
+
+
+        <div class="letter-area">
+
+            <div class="envelope">
+
+                <div class="envelope-icon">
+                    💌
+                </div>
+
+                <h3>
+                    For Maria
+                </h3>
+
+                <div class="message">
+
+                    Happy Birthday, Maria! 🎂✨
+
+                    <br><br>
+
+                    I hope today reminds you of just
+                    how special you are.
+
+                    <br><br>
+
+                    You deserve a day filled with
+                    happiness, laughter, beautiful
+                    memories and all the little things
+                    that make you smile.
+
+                    <br><br>
+
+                    Keep being the amazing person you are,
+                    keep smiling, and never forget that
+                    your presence can make an ordinary
+                    day feel a little brighter.
+
+                    <br><br>
+
+                    May this new year of your life bring
+                    you countless reasons to smile,
+                    new adventures and beautiful moments.
+
+                    <br><br>
+
+                    Once again...
+
+                    <br><br>
+
+                    <b>
+                        Happy Birthday, Maria! 💜
+                    </b>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     MEMORIES
+========================= -->
+
+<section>
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <span>
+                THE LITTLE THINGS
+            </span>
+
+            <h2>
+                Things Worth Remembering
+            </h2>
+
+        </div>
+
+
+        <div class="cards">
+
+
+            <div class="card">
+
+                <div class="card-content">
+
+                    <div class="card-number">
+                        01 — SMILE
+                    </div>
+
+                    <h3>
+                        Your Smile
+                    </h3>
+
+                    <p>
+                        One of those little things
+                        that can instantly make
+                        a normal day feel better.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="card">
+
+                <div class="card-content">
+
+                    <div class="card-number">
+                        02 — MOMENTS
+                    </div>
+
+                    <h3>
+                        The Memories
+                    </h3>
+
+                    <p>
+                        The conversations, jokes
+                        and random moments that
+                        become memories without
+                        us even noticing.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="card">
+
+                <div class="card-content">
+
+                    <div class="card-number">
+                        03 — FUTURE
+                    </div>
+
+                    <h3>
+                        More To Come
+                    </h3>
+
+                    <p>
+                        There are still so many
+                        good moments waiting
+                        to happen.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     SPECIAL WORDS
+========================= -->
+
+<section>
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <span>
+                A FEW WORDS
+            </span>
+
+            <h2>
+                Why Maria Is Special
+            </h2>
+
+        </div>
+
+
+        <div class="reasons">
+
+
+            <div class="reason">
+
+                <b>
+                    ✨ Your Energy
+                </b>
+
+                You have your own way of making
+                ordinary moments memorable.
+
+            </div>
+
+
+            <div class="reason">
+
+                <b>
+                    🌙 Your Presence
+                </b>
+
+                Even simple conversations can
+                become meaningful memories.
+
+            </div>
+
+
+            <div class="reason">
+
+                <b>
+                    🌸 Your Kindness
+                </b>
+
+                The little things you do can mean
+                more than you realize.
+
+            </div>
+
+
+            <div class="reason">
+
+                <b>
+                    ⭐ Your Personality
+                </b>
+
+                There is only one Maria,
+                and that's what makes you unique.
+
+            </div>
+
+
+            <div class="reason">
+
+                <b>
+                    💫 Your Dreams
+                </b>
+
+                I hope you always keep chasing
+                the things that make you happy.
+
+            </div>
+
+
+            <div class="reason">
+
+                <b>
+                    🎂 Today
+                </b>
+
+                Today is simply a celebration
+                of you, Maria.
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     FINAL SURPRISE
+========================= -->
+
+<section>
+
+    <div class="container final">
+
+        <div class="small">
+            One Last Thing...
+        </div>
+
+
+        <h2>
+            Happy Birthday, Maria ✨
+        </h2>
+
+
+        <p>
+
+            I hope this little website becomes
+            one tiny memory from a day full of
+            beautiful ones.
+
+            <br><br>
+
+            Whatever the future brings, I hope
+            it brings you happiness, success,
+            peace and plenty of reasons to smile.
+
+        </p>
+
+
+        <button
+            class="surprise"
+            onclick="showSurprise()">
+
+            Open One Last Surprise 💜
+
+        </button>
+
+
+        <div
+            class="hidden-message"
+            id="hiddenMessage">
+
+            <h3>
+                🎁 A Final Message
+            </h3>
+
+            <p>
+
+                You made it all the way here.
+
+                <br><br>
+
+                So here's the final message:
+
+                <br><br>
+
+                <b>
+                    "Never stop being yourself.
+                    The world is better with your
+                    smile in it."
+                </b>
+
+                <br><br>
+
+                Happy Birthday, Maria! 🎂💜✨
+
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<footer>
+
+    Made specially for Maria ✨
+
+</footer>
+
+
+<script>
+
+/* CREATE STARS */
+
+const stars =
+    document.getElementById("stars");
+
+for(let i=0;i<160;i++){
+
+    const star =
+        document.createElement("div");
+
+    star.className="star";
+
+    star.style.left =
+        Math.random()*100+"%";
+
+    star.style.top =
+        Math.random()*100+"%";
+
+    star.style.animationDelay =
+        Math.random()*3+"s";
+
+    star.style.opacity =
+        Math.random();
+
+    stars.appendChild(star);
+}
+
+
+/* SCROLL TO LETTER */
+
+function scrollToLetter(){
+
+    document
+        .getElementById("letter")
+        .scrollIntoView({
+            behavior:"smooth"
+        });
+
+}
+
+
+/* FINAL SURPRISE */
+
+function showSurprise(){
+
+    const box =
+        document.getElementById(
+            "hiddenMessage"
+        );
+
+    box.style.display="block";
+
+
+    /* MANY FLOATING HEARTS */
+
+    for(let i=0;i<40;i++){
+
+        setTimeout(
+            createHeart,
+            i*80
+        );
+
+    }
+
+}
+
+
+/* FLOATING HEART */
+
+function createHeart(){
+
+    const heart =
+        document.createElement("div");
+
+    heart.className="heart";
+
+
+    const symbols=[
+        "♥",
+        "♡",
+        "💜",
+        "✨",
+        "💖"
+    ];
+
+
+    heart.innerText =
+        symbols[
+            Math.floor(
+                Math.random()*
+                symbols.length
+            )
+        ];
+
+
+    heart.style.left =
+        Math.random()*100+"vw";
+
+
+    heart.style.fontSize =
+        (15+Math.random()*25)+"px";
+
+
+    heart.style.animationDuration =
+        (4+Math.random()*3)+"s";
+
+
+    document.body.appendChild(heart);
+
+
+    setTimeout(()=>{
+
+        heart.remove();
+
+    },7000);
+
+}
+
+
+/* AMBIENT HEARTS */
+
+setInterval(()=>{
+
+    if(Math.random()<.35){
+
+        createHeart();
+
+    }
+
+},1800);
+
+</script>
+
+</body>
+</html>
